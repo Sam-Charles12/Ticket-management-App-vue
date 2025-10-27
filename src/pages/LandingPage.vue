@@ -159,7 +159,7 @@ const handleLogin = () => {
           <CardRoot
             v-for="feature in features"
             :key="feature.title"
-            class="rounded-2xl border-2 shadow-lg transition-all hover:border-blue-200 hover:shadow-xl"
+            class="rounded-2xl border border-gray-200 shadow-lg transition-allhover:shadow-xl"
           >
             <CardContent class="p-6">
               <div
@@ -175,9 +175,9 @@ const handleLogin = () => {
       </div>
     </section>
 
-    <section class="bg-gray-50 py-20">
-      <div class="mx-auto w-full max-w-[1440px] px-4">
-        <div class="rounded-3xl bg-white p-8 shadow-xl md:p-12">
+    <section class="bg-gray-50 py-20 ">
+      <div class="mx-auto w-full max-w-[1440px] px-4 ">
+        <div class="rounded-3xl bg-white p-8 shadow-xl md:p-12 border border-gray-200">
           <div class="grid gap-12 lg:grid-cols-2">
             <div>
               <h2 class="mb-6">
@@ -189,7 +189,7 @@ const handleLogin = () => {
                 Join thousands of teams who have transformed their support
                 workflow with our comprehensive ticket management solution.
               </p>
-              <AppButton size="lg" class="gap-2" @click="handleGetStarted">
+              <AppButton size="lg" class="gap-2 bg-black shadow-lg text-white hover:text-black hover:bg-white transition cursor-pointer hover:shadow-xl" @click="handleGetStarted">
                 Start Your Free Trial
                 <ArrowRight class="h-4 w-4" />
               </AppButton>
@@ -199,7 +199,7 @@ const handleLogin = () => {
               <div
                 v-for="benefit in benefits"
                 :key="benefit"
-                class="flex items-start gap-3 rounded-xl bg-gray-50 p-4"
+                class="flex items-start gap-3 rounded-xl bg-gray-50 p-4 border border-gray-200"
               >
                 <div
                   class="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-green-100"

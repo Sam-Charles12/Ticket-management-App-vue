@@ -100,16 +100,20 @@ const handleDelete = () => {
 
 <template>
   <section class="py-16">
-    <div class="mx-auto w-full max-w-[1440px] px-4">
+    <div class="mx-auto w-9/10 max-w-[1440px] px-4 md:w-7/10">
       <div class="mb-6">
-        <AppButton variant="ghost" class="gap-2" @click="handleBack">
+        <AppButton
+          variant="ghost"
+          class="gap-2 cursor-pointer"
+          @click="handleBack"
+        >
           <ArrowLeft class="h-4 w-4" />
           Back to Tickets
         </AppButton>
       </div>
 
       <template v-if="ticket">
-        <AppCard class="rounded-2xl shadow-xl">
+        <AppCard class="rounded-2xl shadow-xl border border-gray-200">
           <CardHeader>
             <div
               class="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between"
@@ -135,7 +139,7 @@ const handleDelete = () => {
                 <AppButton
                   variant="outline"
                   size="sm"
-                  class="gap-2"
+                  class="gap-2 cursor-pointer bg-black text-white hover:bg-white hover:text-black"
                   @click="handleEdit"
                 >
                   <Edit class="h-4 w-4" />
@@ -144,7 +148,7 @@ const handleDelete = () => {
                 <AppButton
                   variant="outline"
                   size="sm"
-                  class="gap-2 text-red-600 hover:bg-red-50 hover:text-red-700"
+                  class="gap-2 text-red-600 hover:bg-red-50 cursor-pointer hover:text-red-700"
                   @click="handleDelete"
                 >
                   <Trash2 class="h-4 w-4" />

@@ -170,7 +170,7 @@ const getStatusCount = (value: StatusFilter) =>
             into any ticket.
           </p>
         </div>
-        <AppButton class="gap-2 bg-black text-white" @click="handleCreate">
+        <AppButton class="gap-2 bg-black cursor-pointer text-white" @click="handleCreate">
           <Plus class="h-4 w-4" />
           New Ticket
         </AppButton>
@@ -325,11 +325,11 @@ const getStatusCount = (value: StatusFilter) =>
                   ticket.id
                 }}
               </p> -->
-              <div class="flex gap-2">
+              <div class="flex w-full gap-2">
                 <AppButton
                   size="sm"
                   variant="outline"
-                  class="gap-2 border border-gray-200 "
+                  class="gap-2 border flex-1 cursor-pointer hover:bg-gray-100 transition border-gray-200"
                   @click="handleView(ticket.id)"
                 >
                   <Eye class="h-4 w-4" />
@@ -337,7 +337,7 @@ const getStatusCount = (value: StatusFilter) =>
                 </AppButton>
                 <AppButton
                   size="sm"
-                  class="gap-2 text-blac border border-gray-200"
+                  class="gap-2 text-blac border cursor-pointer hover:bg-gray-100 transition border-gray-200"
                   @click="handleEdit(ticket.id)"
                 >
                   <PencilLine class="h-4 w-4" />
