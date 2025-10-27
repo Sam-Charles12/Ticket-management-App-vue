@@ -64,7 +64,7 @@ const handleNavigate = (name: string) => {
 
 <template>
   <div
-    class="flex min-h-[calc(100vh-4rem)] items-center justify-center bg-gray-50 px-4 py-12"
+    class="flex min-h-[calc(100vh-4rem)] items-center justify-center bg-gray-100 px-4 py-12"
   >
     <div class="mx-auto w-full max-w-[1440px]">
       <div class="mx-auto w-full max-w-md">
@@ -80,7 +80,7 @@ const handleNavigate = (name: string) => {
           <p class="text-gray-600">Sign in to your account to continue</p>
         </div>
 
-        <AppCard class="rounded-2xl shadow-xl">
+        <AppCard class="rounded-2xl shadow-xl border border-gray-200">
           <CardHeader>
             <CardTitle class="text-2xl">Sign In</CardTitle>
             <CardDescription>
@@ -105,7 +105,12 @@ const handleNavigate = (name: string) => {
                   placeholder="name@example.com"
                   :disabled="isSubmitting"
                   required
-                  :class="[errorMessage && !form.email ? 'border-red-500' : '']"
+                  :class="[
+                    errorMessage && !form.email
+                      ? 'border-red-500'
+                      : 'border-gray-300',
+                    'bg-gray-50 text-gray-900 placeholder-gray-400 focus:border-blue-600 focus:ring-0',
+                  ]"
                 />
               </div>
 
@@ -121,12 +126,15 @@ const handleNavigate = (name: string) => {
                   :disabled="isSubmitting"
                   required
                   :class="[
-                    errorMessage && !form.password ? 'border-red-500' : '',
+                    errorMessage && !form.email
+                      ? 'border-red-500'
+                      : 'border-gray-300',
+                    'bg-gray-50 text-gray-900 placeholder-gray-400 focus:border-blue-600 focus:ring-0',
                   ]"
                 />
               </div>
 
-              <AppButton type="submit" class="w-full" :disabled="isSubmitting">
+              <AppButton type="submit" class="w-full bg-black text-white" :disabled="isSubmitting">
                 {{ isSubmitting ? "Signing in..." : "Sign In" }}
               </AppButton>
 
@@ -142,7 +150,7 @@ const handleNavigate = (name: string) => {
               </div>
 
               <div
-                class="rounded-lg border bg-blue-50 p-3 text-left text-sm text-blue-900"
+                class="rounded-lg bg-blue-50 p-3 text-left text-sm text-blue-900"
               >
                 <p class="mb-1 font-medium">Demo credentials:</p>
                 <p class="text-xs">Email: any valid email</p>

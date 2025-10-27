@@ -81,3 +81,26 @@
 html {
   font-size: var(--font-size);
 }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+/*
+  Accessibility-friendly override:
+  Remove unexpected black outline/box-shadow that some global styles
+  (or a leftover template stylesheet) may apply to large elements.
+  Keep focus-visible styles for keyboard users.
+*/
+:where(#app) :where(:focus) {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+:where(:focus):not(:focus-visible) {
+  outline: none !important;
+  box-shadow: none !important;
+}

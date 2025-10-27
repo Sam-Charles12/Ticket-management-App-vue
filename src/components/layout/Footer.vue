@@ -6,7 +6,7 @@ const currentYear = computed(() => new Date().getFullYear());
 </script>
 
 <template>
-  <footer class="border-t bg-gray-50">
+  <footer class="bg-gray-50 border-t border-gray-200 shadow-lg">
     <div class="mx-auto w-full max-w-[1440px] px-4 py-12">
       <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
         <div>
@@ -119,7 +119,7 @@ const currentYear = computed(() => new Date().getFullYear());
         </div>
       </div>
 
-      <div class="mt-12 border-t pt-8">
+      <div class="mt-12 pt-8">
         <div
           class="flex flex-col items-center justify-between gap-4 text-sm text-gray-600 sm:flex-row"
         >

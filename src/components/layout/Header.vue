@@ -67,7 +67,7 @@ onBeforeUnmount(() => {
 
 <template>
   <header
-    class="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-backdrop-filter:bg-white/60"
+    class="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-sm supports-backdrop-filter:bg-white/60 shadow-md"
   >
     <div
       class="mx-auto flex h-16 w-full max-w-[1440px] items-center justify-between px-4"
@@ -138,7 +138,7 @@ onBeforeUnmount(() => {
             <transition name="fade">
               <div
                 v-if="isMenuOpen"
-                class="absolute right-0 z-50 mt-2 w-56 rounded-xl border bg-popover p-3 shadow-xl"
+                class="absolute right-0 z-50 mt-2 w-56 rounded-xl bg-popover p-3 shadow-xl"
               >
                 <div class="mb-3 space-y-1">
                   <p class="text-sm font-medium text-foreground">

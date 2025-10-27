@@ -76,7 +76,7 @@ const benefits = [
       <div class="relative mx-auto w-full max-w-[1440px] px-4 py-20 md:py-32">
         <div class="mx-auto max-w-4xl text-center">
           <div
-            class="mb-6 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-2 shadow-lg backdrop-blur-sm"
+            class="mb-6 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 shadow-lg backdrop-blur-sm"
           >
             <Ticket class="h-4 w-4" />
             <span class="text-sm">Trusted by 10,000+ teams worldwide</span>
@@ -204,7 +204,7 @@ const benefits = [
     <section class="bg-white py-20">
       <div class="mx-auto w-full max-w-[1440px] px-4">
         <CardRoot
-          class="rounded-3xl border-2 border-blue-600 bg-linear-to-br from-blue-600 to-blue-800 text-white shadow-2xl"
+          class="rounded-3xl border-blue-600 bg-linear-to-br from-blue-600 to-blue-800 text-white shadow-2xl"
         >
           <CardContent class="p-12 text-center">
             <h2 class="mb-4 text-white">Ready to Get Started?</h2>
