@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useRouter } from "vue-router";
 import {
   ArrowRight,
   CheckCircle2,
@@ -56,6 +57,16 @@ const benefits = [
   "API access for integrations",
   "99.9% uptime guarantee",
 ];
+
+const router = useRouter();
+
+const handleGetStarted = () => {
+  router.push({ name: "register" });
+};
+
+const handleLogin = () => {
+  router.push({ name: "login" });
+};
 </script>
 
 <template>
@@ -99,6 +110,7 @@ const benefits = [
             <AppButton
               size="lg"
               class="gap-2 bg-white text-blue-600 hover:bg-blue-50"
+              @click="handleGetStarted"
             >
               Get Started Free
               <ArrowRight class="h-4 w-4" />
@@ -107,6 +119,7 @@ const benefits = [
               size="lg"
               variant="outline"
               class="border-white bg-transparent text-white hover:bg-white/10"
+              @click="handleLogin"
             >
               Login
             </AppButton>
@@ -176,7 +189,7 @@ const benefits = [
                 Join thousands of teams who have transformed their support
                 workflow with our comprehensive ticket management solution.
               </p>
-              <AppButton size="lg" class="gap-2">
+              <AppButton size="lg" class="gap-2" @click="handleGetStarted">
                 Start Your Free Trial
                 <ArrowRight class="h-4 w-4" />
               </AppButton>

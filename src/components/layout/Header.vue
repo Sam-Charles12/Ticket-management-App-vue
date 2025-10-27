@@ -121,9 +121,18 @@ onBeforeUnmount(() => {
 
       <div class="flex items-center gap-3">
         <template v-if="authStore.isAuthenticated">
-          <AppButton class="gap-2" @click="navigateTo('ticket-create')">
+          <AppButton class="gap-2 cursor-pointer bg-black text-white" @click="navigateTo('ticket-create')">
             <Plus class="h-4 w-4" />
             <span class="hidden sm:inline">New Ticket</span>
+          </AppButton>
+
+          <AppButton
+            variant="outline"
+            class="gap-2 text-red-600 hover:bg-red-50 hover:text-red-700"
+            @click="handleLogout"
+          >
+            <LogOut class="h-4 w-4" />
+            <span class="hidden sm:inline cursor-pointer">Log out</span>
           </AppButton>
 
           <div ref="menuRef" class="relative">
@@ -162,10 +171,10 @@ onBeforeUnmount(() => {
         </template>
 
         <template v-else>
-          <AppButton variant="ghost" @click="navigateTo('login')"
+          <AppButton class="cursor-pointer" variant="ghost" @click="navigateTo('login')"
             >Log in</AppButton
           >
-          <AppButton @click="navigateTo('register')">Sign up</AppButton>
+          <AppButton class="bg-black text-white cursor-pointer" @click="navigateTo('register')">Sign up</AppButton>
         </template>
       </div>
     </div>

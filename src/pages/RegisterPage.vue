@@ -118,7 +118,7 @@ const handleNavigate = (name: string) => {
           <p class="text-gray-600">Get started with TicketFlow today</p>
         </div>
 
-        <AppCard class="rounded-2xl shadow-xl">
+        <AppCard class="rounded-2xl shadow-xl border border-gray-200">
           <CardHeader>
             <CardTitle class="text-2xl">Sign Up</CardTitle>
             <CardDescription>
@@ -133,7 +133,7 @@ const handleNavigate = (name: string) => {
               </AppAlert>
 
               <div class="space-y-2">
-                <AppLabel for="name">
+                <AppLabel for="name" class="mb-[5px]">
                   Full Name <span class="text-red-500">*</span>
                 </AppLabel>
                 <AppInput
@@ -142,12 +142,13 @@ const handleNavigate = (name: string) => {
                   type="text"
                   placeholder="John Doe"
                   :disabled="isSubmitting"
+                  class="border border-gray-200 bg-white shadow-sm"
                   required
                 />
               </div>
 
               <div class="space-y-2">
-                <AppLabel for="register-email">
+                <AppLabel for="register-email" class="mb-[5px]">
                   Email <span class="text-red-500">*</span>
                 </AppLabel>
                 <AppInput
@@ -156,12 +157,13 @@ const handleNavigate = (name: string) => {
                   type="email"
                   placeholder="name@example.com"
                   :disabled="isSubmitting"
+                  class="border border-gray-200 bg-white shadow-sm"
                   required
                 />
               </div>
 
               <div class="space-y-2">
-                <AppLabel for="register-password">
+                <AppLabel for="register-password" class="mb-[5px]">
                   Password <span class="text-red-500">*</span>
                 </AppLabel>
                 <AppInput
@@ -170,6 +172,7 @@ const handleNavigate = (name: string) => {
                   type="password"
                   placeholder="Create a password (min 6 characters)"
                   :disabled="isSubmitting"
+                  class="border border-gray-200 bg-white shadow-sm"
                   required
                 />
                 <p v-if="isShortPassword" class="text-sm text-amber-600">
@@ -178,7 +181,7 @@ const handleNavigate = (name: string) => {
               </div>
 
               <div class="space-y-2">
-                <AppLabel for="register-confirm-password">
+                <AppLabel for="register-confirm-password" class="mb-[5px]">
                   Confirm Password <span class="text-red-500">*</span>
                 </AppLabel>
                 <AppInput
@@ -187,6 +190,7 @@ const handleNavigate = (name: string) => {
                   type="password"
                   placeholder="Confirm your password"
                   :disabled="isSubmitting"
+                  class="border border-gray-200 bg-white shadow-sm"
                   required
                 />
                 <p v-if="passwordsMismatch" class="text-sm text-amber-600">
@@ -194,7 +198,7 @@ const handleNavigate = (name: string) => {
                 </p>
               </div>
 
-              <AppButton type="submit" class="w-full" :disabled="isSubmitting">
+              <AppButton type="submit" class="w-full bg-black text-white cursor-pointer " :disabled="isSubmitting">
                 {{ isSubmitting ? "Creating account..." : "Create Account" }}
               </AppButton>
 

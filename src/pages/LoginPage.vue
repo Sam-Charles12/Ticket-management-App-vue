@@ -134,7 +134,7 @@ const handleNavigate = (name: string) => {
                 />
               </div>
 
-              <AppButton type="submit" class="w-full bg-black text-white" :disabled="isSubmitting">
+              <AppButton type="submit" class="w-full bg-black text-white cursor-pointer" :disabled="isSubmitting">
                 {{ isSubmitting ? "Signing in..." : "Sign In" }}
               </AppButton>
 

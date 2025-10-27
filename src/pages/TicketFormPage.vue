@@ -185,7 +185,7 @@ const handleSubmit = async () => {
         </AppButton>
 
         <template v-if="!ticket && isEdit">
-          <AppCard class="rounded-2xl shadow-xl">
+          <AppCard class="rounded-2xl shadow-xl border border-gray-200">
             <CardContent
               class="flex flex-col items-center justify-center py-16"
             >
@@ -199,7 +199,7 @@ const handleSubmit = async () => {
         </template>
 
         <template v-else>
-          <AppCard class="rounded-2xl shadow-lg">
+          <AppCard class="rounded-2xl shadow-lg border border-gray-200">
             <CardHeader>
               <CardTitle>{{
                 isEdit ? "Edit Ticket" : "Create New Ticket"

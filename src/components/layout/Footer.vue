@@ -121,7 +121,7 @@ const currentYear = computed(() => new Date().getFullYear());
 
       <div class="mt-12 pt-8">
         <div
-          class="flex flex-col items-center justify-between gap-4 text-sm text-gray-600 sm:flex-row"
+          class="flex flex-col items-center justify-between gap-4 text-sm text-gray-600 sm:flex-row border-y border-gray-200 py-6"
         >
           <p>© {{ currentYear }} TicketFlow. All rights reserved.</p>
           <div class="flex gap-6">

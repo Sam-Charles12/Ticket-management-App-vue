@@ -94,7 +94,7 @@ const navigateTo = (name: string, id?: string) => {
       </div>
 
       <div class="mb-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-        <AppCard class="rounded-2xl shadow-lg">
+        <AppCard class="rounded-2xl shadow-lg border border-gray-200">
           <CardHeader class="flex flex-row items-center justify-between pb-2">
             <CardTitle class="text-sm font-medium">Total Tickets</CardTitle>
             <TicketIcon class="h-4 w-4 text-gray-500" />
@@ -107,7 +107,7 @@ const navigateTo = (name: string, id?: string) => {
           </CardContent>
         </AppCard>
 
-        <AppCard class="rounded-2xl shadow-lg">
+        <AppCard class="rounded-2xl shadow-lg border border-gray-200">
           <CardHeader class="flex flex-row items-center justify-between pb-2">
             <CardTitle class="text-sm font-medium">Open Tickets</CardTitle>
             <AlertCircle class="h-4 w-4 text-blue-500" />
@@ -120,7 +120,7 @@ const navigateTo = (name: string, id?: string) => {
           </CardContent>
         </AppCard>
 
-        <AppCard class="rounded-2xl shadow-lg">
+        <AppCard class="rounded-2xl shadow-lg border border-gray-200">
           <CardHeader class="flex flex-row items-center justify-between pb-2">
             <CardTitle class="text-sm font-medium">In Progress</CardTitle>
             <Clock class="h-4 w-4 text-yellow-500" />
@@ -133,7 +133,7 @@ const navigateTo = (name: string, id?: string) => {
           </CardContent>
         </AppCard>
 
-        <AppCard class="rounded-2xl shadow-lg">
+        <AppCard class="rounded-2xl shadow-lg border border-gray-200">
           <CardHeader class="flex flex-row items-center justify-between pb-2">
             <CardTitle class="text-sm font-medium">Closed</CardTitle>
             <CheckCircle2 class="h-4 w-4 text-green-500" />
@@ -148,7 +148,7 @@ const navigateTo = (name: string, id?: string) => {
       </div>
 
       <div class="grid gap-6 lg:grid-cols-3">
-        <AppCard class="rounded-2xl shadow-lg lg:col-span-2">
+        <AppCard class="rounded-2xl shadow-lg lg:col-span-2 border border-gray-200">
           <CardHeader class="flex flex-row items-center justify-between">
             <CardTitle class="text-xl">Recent Tickets</CardTitle>
             <AppButton
@@ -183,10 +183,10 @@ const navigateTo = (name: string, id?: string) => {
                 v-for="ticket in recentTickets"
                 v-else
                 :key="ticket.id"
-                class="flex cursor-pointer items-start justify-between gap-4 rounded-lg border p-4 transition-colors hover:bg-gray-50"
+                class="flex items-start justify-between gap-4 rounded-lg border border-gray-200 p-4 transition-colors cursor-pointer hover:bg-gray-100 "
                 @click="navigateTo('ticket-detail', ticket.id)"
               >
-                <div class="flex-1 space-y-2">
+                <div class="flex-1 space-y-2 ">
                   <div class="flex items-center gap-2">
                     <h4
                       class="line-clamp-1 text-base font-semibold text-foreground"
@@ -228,7 +228,7 @@ const navigateTo = (name: string, id?: string) => {
             </CardHeader>
             <CardContent class="space-y-2">
               <AppButton
-                class="w-full justify-start gap-2"
+                class="w-full justify-start gap-2 bg-black text-white"
                 @click="navigateTo('ticket-create')"
               >
                 <TicketIcon class="h-4 w-4" />
@@ -236,7 +236,7 @@ const navigateTo = (name: string, id?: string) => {
               </AppButton>
               <AppButton
                 variant="outline"
-                class="w-full justify-start gap-2"
+                class="w-full justify-start gap-2 border border-gray-200 cursor-pointer hover:bg-gray-100"
                 @click="navigateTo('tickets')"
               >
                 <TrendingUp class="h-4 w-4" />
@@ -247,7 +247,7 @@ const navigateTo = (name: string, id?: string) => {
 
           <AppCard
             v-if="criticalTickets > 0"
-            class="rounded-2xl border-red-200 bg-red-50 shadow-lg"
+            class="rounded-2xl border border-red-300 bg-red-50 shadow-lg"
           >
             <CardHeader>
               <CardTitle class="flex items-center gap-2 text-red-700">
@@ -263,7 +263,7 @@ const navigateTo = (name: string, id?: string) => {
               </p>
               <AppButton
                 variant="destructive"
-                class="mt-4 w-full"
+                class="mt-4 w-full bg-red-700 cursor-pointer text-white"
                 @click="navigateTo('tickets')"
               >
                 View Critical Tickets
@@ -271,7 +271,7 @@ const navigateTo = (name: string, id?: string) => {
             </CardContent>
           </AppCard>
 
-          <AppCard class="rounded-2xl shadow-lg">
+          <AppCard class="rounded-2xl shadow-lg border border-gray-200">
             <CardHeader>
               <CardTitle class="text-lg">Ticket Overview</CardTitle>
             </CardHeader>
