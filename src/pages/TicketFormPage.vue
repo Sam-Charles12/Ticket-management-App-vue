@@ -216,12 +216,15 @@ const handleSubmit = async () => {
                   <AppLabel for="title">
                     Title <span class="text-red-500">*</span>
                   </AppLabel>
-                  <AppInput
+                    <AppInput
                     id="title"
                     v-model="form.title"
                     placeholder="Enter ticket title"
                     :disabled="isSubmitting"
-                    :class="[errors.title ? 'border-red-500' : '']"
+                    :class="[
+                      'block w-full rounded-md border border-gray-300 bg-card px-3 py-2 text-sm text-foreground shadow-sm outline-none transition-[color,box-shadow] focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]',
+                      errors.title ? 'border-red-500 focus-visible:border-red-500 focus-visible:ring-red-200/70' : ''
+                    ]"
                   />
                   <p v-if="errors.title" class="text-sm text-red-600">
                     {{ errors.title }}
@@ -237,8 +240,8 @@ const handleSubmit = async () => {
                     v-model="form.description"
                     rows="5"
                     :class="[
-                      'border-input bg-input-background text-foreground placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] block w-full rounded-md border px-3 py-2 text-sm outline-none transition-[color,box-shadow]',
-                      errors.description ? 'border-red-500' : '',
+                      'block w-full rounded-md border border-gray-300 bg-card px-3 py-2 text-sm text-foreground shadow-sm outline-none transition-[color,box-shadow] focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]',
+                      errors.description ? 'border-red-500 focus-visible:border-red-500 focus-visible:ring-red-200/70' : ''
                     ]"
                     :disabled="isSubmitting"
                   ></textarea>
@@ -255,10 +258,10 @@ const handleSubmit = async () => {
                     <select
                       id="status"
                       v-model="form.status"
-                      :class="[
-                        'border-input bg-input-background text-foreground focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] block w-full rounded-md border px-3 py-2 text-sm outline-none transition-[color,box-shadow]',
-                        errors.status ? 'border-red-500' : '',
-                      ]"
+                        :class="[
+                        'block w-full rounded-md border border-gray-300 bg-card px-3 py-2 text-sm text-foreground shadow-sm outline-none transition-[color,box-shadow] focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]',
+                        errors.status ? 'border-red-500 focus-visible:border-red-500 focus-visible:ring-red-200/70' : ''
+                        ]"
                       :disabled="isSubmitting"
                     >
                       <option
@@ -279,7 +282,9 @@ const handleSubmit = async () => {
                     <select
                       id="priority"
                       v-model="form.priority"
-                      class="border-input bg-input-background text-foreground focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] block w-full rounded-md border px-3 py-2 text-sm outline-none transition-[color,box-shadow]"
+                        :class="[
+                        'block w-full rounded-md border border-gray-300 bg-card px-3 py-2 text-sm text-foreground shadow-sm outline-none transition-[color,box-shadow] focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]'
+                        ]"
                       :disabled="isSubmitting"
                     >
                       <option
@@ -301,8 +306,10 @@ const handleSubmit = async () => {
                     id="assignee"
                     v-model="form.assignee"
                     :class="[
-                      'border-input bg-input-background text-foreground focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] block w-full rounded-md border px-3 py-2 text-sm outline-none transition-[color,box-shadow]',
-                      errors.assignee ? 'border-red-500' : '',
+                      'block w-full rounded-md border border-gray-300 bg-card px-3 py-2 text-sm text-foreground shadow-sm outline-none transition-[color,box-shadow] focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]',
+                      errors.assignee
+                      ? 'border-red-500 focus-visible:border-red-500 focus-visible:ring-red-200/70'
+                      : ''
                     ]"
                     :disabled="isSubmitting"
                   >
@@ -321,8 +328,21 @@ const handleSubmit = async () => {
                 </div>
 
                 <div
-                  class="flex flex-col gap-3 pt-4 sm:flex-row sm:justify-end"
+                  class="flex flex-col space-y-2 gap-3 pt-4 sm:flex-row sm:justify-start"
                 >
+                <AppButton
+                    type="submit"
+                    class="bg-black text-white flex-1"
+                  :disabled="isSubmitting"
+                >
+                  {{
+                    isSubmitting
+                      ? "Saving..."
+                      : isEdit
+                      ? "Update Ticket"
+                      : "Create Ticket"
+                  }}
+                </AppButton>
                   <AppButton
                     type="button"
                     variant="outline"
@@ -330,19 +350,6 @@ const handleSubmit = async () => {
                     @click="handleBack"
                   >
                     Cancel
-                  </AppButton>
-                  <AppButton
-                    type="submit"
-                    class="sm:w-auto"
-                    :disabled="isSubmitting"
-                  >
-                    {{
-                      isSubmitting
-                        ? "Saving..."
-                        : isEdit
-                        ? "Update Ticket"
-                        : "Create Ticket"
-                    }}
                   </AppButton>
                 </div>
               </form>
